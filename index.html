@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>Ejercicio Guiado</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <!-- vista -->
+<div id="app">
+  <table border="1">
+    <tr>
+      <th> NOMBRE </th>
+      <th> APELLIDO</th>
+      <th> RUN </th>
+      <th> FECHA</th>
+      <th> EDAD</th>
+    </tr>
+    <tr v-for = "estudiante of estudiantes">
+      <td > {{estudiante["nombre"]}} </td>
+      <td > {{estudiante["apellido"]}} </td>
+      <td > {{estudiante["run"]}} </td>
+      <td > {{estudiante["fecha"]}} </td>
+      <td > {{estudiante["edad"]}} </td>
+    </tr>
+  </table>
+</div>
+
+<script>
+const app = new Vue({
+  // modelo
+  el: '#app',
+  data:{
+    estudiantes: [
+       {
+          "nombre":"antonio",
+          "apellido":"gonzalez",
+          "run":"34232423",
+          "fecha":"19 nov 1990",
+          "edad":"32"
+       },
+       {
+          "nombre":"benjamin",
+          "apellido":"ortega",
+          "run":"3453534",
+          "fecha":"11 julio 2000",
+          "edad":"22"
+       },
+       {
+          "nombre":"carolina",
+          "apellido":"diaz",
+          "run":"5433345",
+          "fecha":"8 diciembre 2002",
+          "edad":"20"
+       }
+    ]
+
+  },
+  /*
+  created(){//método que se invoca cuando se crea la instancia de vue
+    fetch('assets/datos.json')
+    .then(response => response.json())
+    .then(json =>{
+      for(dato of json){
+        console.log(dato);
+       this.estudiantes.push(dato);
+      }
+      console.log(this.estudiantes);
+    })
+  }
+  */
+});
+</script>
+
+</body>
+</html>
